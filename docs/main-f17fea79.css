@@ -305,7 +305,8 @@ html, body {
   position: relative;
   height: 100%;
   overflow: hidden;
-  background-color: #e3ffb4;
+  background: url(09f035729d71c3d18be3ea4fb36bc83a.png) center center no-repeat;
+  background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   color: #a27000; }
@@ -332,6 +333,7 @@ html, body {
   justify-content: space-around;
   align-items: stretch;
   height: 14%;
+  background-color: #ffffff;
   pointer-events: none; }
   .groups__group {
     display: flex;

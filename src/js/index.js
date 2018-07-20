@@ -8,7 +8,7 @@ const defaults = {
     maxItems: 10,
     itemInterval: 2000,
     itemIntervalRand: 1000,
-    items: ['ball', 'car', 'flower'],
+    items: ['ball', 'ball2', 'baloon', 'car', 'car2', 'duck', 'eight', 'food', 'smallwhale', 'zero', 'flower'],
     whaleInterval: 5000,
     whaleIntervalRand: 2000,
 };
@@ -20,7 +20,7 @@ class CleverWhale {
         this.$whale = $context.querySelector('.js-whale');
         this.$coinCounter = $context.querySelector('.js-coin-counter');
         this.coins = 0;
-        
+
         this.settings = Object.assign({}, defaults, options);
 
         this.groups = null;
@@ -34,6 +34,7 @@ class CleverWhale {
     }
 
     initItems() {
+        this.initRandomItems();
         this.initClickItems();
         this.initShowItems();
         this.initShowWhale();
@@ -41,16 +42,26 @@ class CleverWhale {
 
     initGroups() {
         this.groups = fromHtml(groupsTemplate({
-            groups: this.settings.items.map((name, index) => {
+            groups: this.items.map((name, index) => {
                 return {
                     name: name,
-                    comparee: this.settings.items[index + 1],
-                    notLast: index < this.settings.items.length - 1
+                    comparee: this.items[index + 1],
+                    notLast: index < this.items.length - 1
                 }
             })
         }));
 
         this.$context.appendChild(this.groups.root);
+    }
+
+    initRandomItems() {
+        let items = new Set();
+
+        do {
+            items.add(this.settings.items[Math.floor(Math.random() * this.settings.items.length)]);
+        } while(items.size < 3 );
+
+        this.items = [...items];
     }
 
     initClickItems() {
@@ -133,9 +144,9 @@ class CleverWhale {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 if(this.$items.querySelectorAll('.js-item').length < this.settings.maxItems) {
-                    let newItemIndex = Math.floor(Math.random() * this.settings.items.length);
+                    let newItemIndex = Math.floor(Math.random() * this.items.length);
                     let newItem = fromHtml(itemTemplate({
-                        item: this.settings.items[newItemIndex],
+                        item: this.items[newItemIndex],
                         x: (Math.random() * 80 + 10) + '%',
                         y: (Math.random() * 80 + 10) + '%',
                     })).item;
