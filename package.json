@@ -6,9 +6,10 @@
   "scripts": {
     "prestart": "rm -rf ./dist/*",
     "prebuild": "rm -rf ./dist/*",
+    "predeploy": "rm -rf ./docs/*",
     "start": "webpack-dev-server --config webpack.config.dev.js",
     "build": "webpack --config webpack.config.prod.js",
-    "deploy": "npm run build && echo deploy"
+    "deploy": "npm run build && cp -r ./dist/* ./docs/"
   },
   "repository": {
     "type": "git",
