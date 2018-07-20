@@ -1,0 +1,35 @@
+.groups {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 14%;
+    pointer-events: none;
+
+    &__group {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    &__items {
+        width: 100%;
+        flex-grow: 1;
+    }
+
+    &__count {
+        width: 100%;
+        flex-grow: 0;
+        text-align: center;
+    }
+
+    &__equality {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 10%;
+    }
+
+    &__symbol {
+        font-size: 30px;
+    }
+}

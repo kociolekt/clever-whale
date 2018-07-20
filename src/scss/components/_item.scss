@@ -1,0 +1,23 @@
+.item {
+    position: absolute;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0);
+    transition: all 300ms ease-out;
+
+    &--visible {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    &--counted {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(0.3);
+        pointer-events: none;
+    }
+
+    &--erned {
+        opacity: 0;
+        transform: translate(-50%, -200%) scale(2);
+        pointer-events: none;
+    }
+}

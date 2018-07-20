@@ -1,0 +1,16 @@
+.coin-counter {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    &__img {
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    &__amount {
+        display: inline-block;
+        font-size: 40px;
+        vertical-align: middle;
+    }
+}

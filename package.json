@@ -1,0 +1,50 @@
+{
+  "name": "clever-whale",
+  "version": "1.0.0",
+  "description": "Clever Whale game for kids",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "rm -rf ./dist/*",
+    "prebuild": "rm -rf ./dist/*",
+    "start": "webpack-dev-server --config webpack.config.dev.js",
+    "build": "webpack --config webpack.config.prod.js",
+    "deploy": "npm run build && echo deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kociolekt/clever-whale.git"
+  },
+  "keywords": [
+    "clever",
+    "whale",
+    "game",
+    "kids"
+  ],
+  "author": "Thomas Cauldron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kociolekt/clever-whale/issues"
+  },
+  "homepage": "https://github.com/kociolekt/clever-whale#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "copy-webpack-plugin": "^4.5.2",
+    "css-loader": "^1.0.0",
+    "handlebars": "^4.0.11",
+    "handlebars-loader": "^1.7.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "mustache-loader": "^1.4.1",
+    "node-sass": "^4.9.2",
+    "sass-loader": "^7.0.3",
+    "webpack": "^4.16.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}
